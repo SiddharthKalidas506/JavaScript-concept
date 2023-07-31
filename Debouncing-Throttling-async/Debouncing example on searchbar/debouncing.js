@@ -16,12 +16,9 @@ function getdata() {
 function myDebounceFunct(value, time) {
     let timer;
     return function () {
-
-        let contex = this,
-            args = arguments;
         clearTimeout(timer);
         timer=setTimeout(() => {
-            value.apply(contex,args);
+            value();
         }, time);
 
     }
